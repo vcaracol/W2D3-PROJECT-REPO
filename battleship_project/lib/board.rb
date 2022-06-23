@@ -13,6 +13,10 @@ class Board
     end
 
     def []=(pos, value)
-        @grid[pos] = value
+        @grid[pos[0]][pos[1]] = value
+    end
+
+    def num_ships()
+        @grid.flatten.count {|ele| ele == :S}
     end
 end
